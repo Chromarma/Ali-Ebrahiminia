@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fa" dir="rtl" class="js-hero">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>علی ابراهیمی‌نیا — کارشناس ورود اطلاعات و پشتیبانی محتوای سایت</title>
+  <meta name="description" content="رزومه، نمونه‌کارها و تماس — پردازش و بهینه‌سازی رسانه، تبدیل صوت به متن با هوش مصنوعی، مستندسازی دیجیتال.">
+  <meta name="theme-color" content="#181e24">
+  <meta name="color-scheme" content="dark">
+
+  <!-- ══════════════ LOCAL VENDOR IMPORTS (no CDNs) ══════════════ -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three/three.module.min.js",
+      "gsap": "./vendor/gsap/index.js",
+      "gsap/ScrollTrigger": "./vendor/gsap/ScrollTrigger.js"
+    }
+  }
+  </script>
+
+  <!-- ═══════════ THEME ═══════════ -->
+  <link rel="stylesheet" href="./theme.css">
+</head>
+
+<body>
+  <!-- scroll progress hairline (top of the viewport) -->
+  <div class="scroll-line" aria-hidden="true"><i></i></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       HERO — pinned & scrubbed. On desktop the section is 260vh tall and the
+       stage inside it is sticky, so the liquid-glass row stays on screen while
+       the visitor scrolls through it. Below 820px the hero un-pins itself
+       (motion sickness / thumb reach) and becomes a normal block.
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="hero" id="hero">
+    <div class="hero-stage" id="hero-stage">
+      <div class="hero-ambient" aria-hidden="true">
+        <span class="amb hero-orb-1"></span>
+        <span class="amb hero-orb-2"></span>
+        <span class="amb hero-grid"></span>
+        <span class="amb hero-noise"></span>
+      </div>
+
+      <div class="hero-kicker">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="hero-kicker-text">رزومهٔ من</span>
+      </div>
+
+      <div id="glass" class="hero-canvas" aria-label="نمایش نمونه‌کارها"></div>
+
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <p class="eyebrow"><span id="project-index">01</span><span class="sep">/</span><span id="project-total">10</span></p>
+          <h2 class="hero-title" id="project-brand">علی ابراهیمی‌نیا</h2>
+          <p class="hero-desc" id="project-desc">کارشناس ورود اطلاعات و پشتیبانی محتوا</p>
+        </div>
+
+        <nav class="hero-controls" aria-label="کنترل نمایشگر">
+          <button class="icon-btn" id="prev" type="button" aria-label="پروژهٔ قبلی">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="icon-btn" id="next" type="button" aria-label="پروژهٔ بعدی">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="hero-hint">مرور با ← →</span>
+        </nav>
+      </div>
+
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="cue-line"><i></i></span>
+        <span class="cue-label">اسکرول</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- dark stage dissolving into the content -->
+  <div class="hero-handoff" aria-hidden="true"></div>
+
+  <!-- trailing "View" label (moved by JS, never blocks the pointer) -->
+  <div id="custom-cursor" aria-hidden="true">مشاهده</div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENT — the robot engine builds these blocks as the reader scrolls.
+       RULE: one <section data-robot-section data-robot-label="..."> per block.
+       Keep the sections as direct children of <main>.
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main>
+
+    <section data-robot-section data-robot-label="معرفی">
+      <div class="banner">
+        <h1>علی ابراهیمی‌نیا</h1>
+        <p class="role">کارشناس ورود اطلاعات و پشتیبانی محتوای سایت</p>
+        <p class="tagline">پردازش و بهینه‌سازی رسانه · تبدیل صوت به متن با هوش مصنوعی · مستندسازی دیجیتال</p>
+        <div class="meta-row">
+          <a class="pill" href="tel:+989016630997">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <span class="ltr">0901 663 0997</span>
+          </a>
+          <!-- ایمیل واقعی را جایگزین you@example.com کن (۲ جا: همین‌جا و بخش تماس) -->
+          <a class="pill" href="mailto:you@example.com">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 6.5h18v11H3z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+            <span class="ltr">you@example.com</span>
+          </a>
+          <span class="pill">مشهد، وکیل‌آباد</span>
+          <span class="pill">متولد ۱۳۸۵</span>
+        </div>
+        <p class="en-line"><span class="ltr">Ali Ebrahiminia — Data Entry &amp; Web Content Support · Media Optimization · AI Transcription</span></p>
+      </div>
+    </section>
+
+    <section data-robot-section data-robot-label="خلاصه">
+      <p class="section-index"><span class="num">۱</span><span>خلاصه</span></p>
+      <h2>خلاصه</h2>
+      <p>فایل‌های خام — ویدئو، تصویر، صوت و داده — را می‌گیرم و خروجی مرتب، سبک و آمادهٔ استفاده تحویل می‌دهم. ابزار اصلی من نرم‌افزارهای تخصصی و هوش مصنوعی است، نه برنامه‌نویسی. ساختارمند و عددمحور کار می‌کنم: کار را به مراحل مشخص می‌شکنم، نتیجهٔ قبل و بعد را اندازه می‌گیرم و گزارش می‌دهم. قبل از شروع همکاری، یک نمونهٔ تستی کوتاه انجام می‌دهم.</p>
+    </section>
+
+    <section data-robot-section data-robot-label="مهارت‌ها">
+      <p class="section-index"><span class="num">۲</span><span>مهارت‌ها و ابزارها</span></p>
+      <h2>مهارت‌ها و ابزارها</h2>
+      <div class="table-wrap">
+        <table class="skill-table">
+          <thead>
+            <tr><th>ابزار</th><th>چه کاری با آن انجام می‌دهم</th><th>سطح</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tool"><span class="ltr">StaxRip</span></td>
+              <td>انکود مجدد و فشرده‌سازی ویدئو با <span class="ltr">AV1 / H.265 / H.264</span>؛ تنظیم بهینهٔ حجم و کیفیت</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="level-name">کاربردی</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">XnConvert</span></td>
+              <td>تبدیل و فشرده‌سازی دسته‌ای تصاویر به <span class="ltr">AVIF / WebP / JPEG XL</span>؛ تغییر اندازه و نام‌گذاری گروهی</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="level-name">کاربردی</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">Gemini / AI Studio</span></td>
+              <td>تبدیل صوت به متن، ویرایش و ساختاردهی متن، تولید محتوا و مستندسازی با پرامپت‌های دقیق</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="level-name">پیشرفته</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">Word / Excel / PowerPoint</span></td>
+              <td>ورود اطلاعات، جدول و فرمول‌های پایه، تهیهٔ گزارش و مستندسازی</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="level-name">متوسط</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">WordPress</span></td>
+              <td>بارگذاری و ویرایش نوشته، صفحه و تصویر؛ مدیریت محتوای سایت</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="level-name">مقدماتی</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">Adobe Photoshop</span></td>
+              <td>ویرایش پایهٔ تصویر: برش، تغییر اندازه، اصلاح رنگ و نور</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="level-name">مقدماتی</span></span></td>
+            </tr>
+            <tr>
+              <td class="tool"><span class="ltr">Windows</span></td>
+              <td>نصب سیستم‌عامل، عیب‌یابی خطاهای نرم‌افزاری، مدیریت فایل و پشتیبان‌گیری</td>
+              <td><span class="level"><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="level-name">خوب</span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section data-robot-section data-robot-label="پروژه‌ها">
+      <p class="section-index"><span class="num">۳</span><span>پروژه‌های انجام‌شده</span></p>
+      <h2>پروژه‌های انجام‌شده</h2>
+
+      <article class="job">
+        <header class="job-head">
+          <h3>فشرده‌سازی و بهینه‌سازی رسانه</h3>
+          <p class="when">۱۴۰۵</p>
+        </header>
+        <ul>
+          <li>کاهش حجم ویدئوی ۳ گیگابایتی به ۱ گیگابایت (۶۶٪) با <span class="ltr">StaxRip</span>؛ تبدیل دسته‌ای ۲٬۵۰۰ تصویر به <span class="ltr">WebP</span> با <span class="ltr">XnConvert</span> (۷۰٪ کاهش حجم).</li>
+        </ul>
+        <p class="muted">← جزئیات در بخش نمونه‌کارها</p>
+      </article>
+
+      <article class="job">
+        <header class="job-head">
+          <h3>تبدیل صوت به متن و انتشار چندقالبی</h3>
+          <p class="when">۱۴۰۵</p>
+        </header>
+        <ul>
+          <li>تبدیل فایل‌های صوتی ۹۰ دقیقه‌ای به متن با <span class="ltr">Gemini 3.1 Pro</span> در <span class="ltr">Google AI Studio</span>، ویرایش و ساختاردهی، خروجی در سه قالب: صفحهٔ وب، تصویر و <span class="ltr">PDF</span>.</li>
+        </ul>
+        <p class="muted">← جزئیات در بخش نمونه‌کارها</p>
+      </article>
+    </section>
+
+    <section data-robot-section data-robot-label="مشخصات">
+      <p class="section-index"><span class="num">۴</span><span>مشخصات و تحصیلات</span></p>
+      <h2>مشخصات</h2>
+      <p>تولد: <strong>۱۳۸۵</strong> (۲۰ ساله) · وضعیت: <strong>مجرد</strong></p>
+      <p>نظام‌وظیفه: <strong>معافیت تحصیلی</strong></p>
+
+      <h3 class="sub">تحصیلات</h3>
+      <p><strong>کاردانی نرم‌افزار کامپیوتر</strong><br>مؤسسهٔ آموزش عالی توس، مشهد<br><span class="muted">۱۴۰۳ – در حال تحصیل</span></p>
+
+      <h3 class="sub">زبان‌ها</h3>
+      <p><strong>فارسی</strong> — زبان مادری</p>
+      <p><strong>انگلیسی</strong> — متوسط؛ خواندن مستندات و کار با ابزارهای انگلیسی</p>
+    </section>
+
+    <section data-robot-section data-robot-label="همکاری">
+      <p class="section-index"><span class="num">۵</span><span>همکاری</span></p>
+      <h2>آمادهٔ همکاری</h2>
+      <div class="tags">
+        <span class="tag">پاره‌وقت</span>
+        <span class="tag">کارآموزی</span>
+        <span class="tag">دورکاری</span>
+        <span class="tag">پروژه‌ای</span>
+      </div>
+      <p>مشهد: وکیل‌آباد، سجاد، مسیر مترو — یا دورکار</p>
+
+      <h3 class="sub">موقعیت‌های هدف</h3>
+      <div class="tags">
+        <span class="tag">ورود اطلاعات</span>
+        <span class="tag">اپراتور کامپیوتر</span>
+        <span class="tag">کارمند اداری</span>
+        <span class="tag">پشتیبان سایت</span>
+        <span class="tag">ادمین وردپرس</span>
+        <span class="tag">بارگذاری محتوا</span>
+        <span class="tag">محتوای فروشگاه آنلاین</span>
+        <span class="tag">برچسب‌گذاری داده</span>
+      </div>
+
+      <h3 class="sub">نقاط قوت</h3>
+      <ul class="clean">
+        <li>تحلیل منطقی و حل مسئلهٔ گام‌به‌گام</li>
+        <li>نظم و کار با چک‌لیست</li>
+        <li>یادگیری سریع ابزارهای جدید</li>
+        <li>گزارش‌دهی شفاف و صریح</li>
+      </ul>
+
+      <h3 class="sub">نمونه‌کارها</h3>
+      <p>فایل‌های قبل/بعد و نمونه‌های کامل: <a class="inline-link" href="https://drive.google.com/file/d/1Oeh6nJNYVHccj3k13JUdMPtl7Zq1Rv06/view" target="_blank" rel="noopener"><span class="ltr">Google Drive</span><span aria-hidden="true"> ↗</span></a></p>
+      <p class="muted">علی ابراهیمی‌نیا — رزومه · به‌روزرسانی: مهر ۱۴۰۵</p>
+    </section>
+
+    <section data-robot-section data-robot-label="نمونه‌کارها">
+      <p class="section-index"><span class="num">۶</span><span>نمونه‌کارها</span></p>
+      <h2>نمونه‌کارها</h2>
+      <p class="lede">دو پروژهٔ واقعی با مسئله، روش کار و نتیجهٔ اندازه‌گیری‌شده</p>
+      <p class="en-line"><span class="ltr">Ali Ebrahiminia — Portfolio</span></p>
+
+      <article class="project-detail">
+        <h3>فشرده‌سازی و بهینه‌سازی رسانه</h3>
+        <p class="when">پروژهٔ ۱ — ۱۴۰۵</p>
+        <div class="tags">
+          <span class="tag"><span class="ltr">StaxRip</span></span>
+          <span class="tag"><span class="ltr">XnConvert</span></span>
+          <span class="tag"><span class="ltr">AV1</span></span>
+          <span class="tag"><span class="ltr">H.265 / H.264</span></span>
+          <span class="tag"><span class="ltr">AVIF</span></span>
+          <span class="tag"><span class="ltr">WebP</span></span>
+          <span class="tag"><span class="ltr">JPEG XL</span></span>
+        </div>
+        <h4>مسئله</h4>
+        <p>یک ویدئوی ۳ گیگابایتی برای آپلود، ارسال و آرشیو بیش از حد سنگین بود. ۲٬۵۰۰ عکس دوربین موبایل هم فضای زیادی اشغال می‌کرد.</p>
+        <h4>روش کار</h4>
+        <p>تحلیل فایل (کدک، بیت‌ریت، رزولوشن) ← انتخاب کدک و تنظیمات کیفیت ← انکود مجدد با <span class="ltr">StaxRip</span> ← مقایسهٔ بصری قبل و بعد ← تحویل. تصاویر با <span class="ltr">XnConvert</span> در یک عملیات دسته‌ای به <span class="ltr">WebP</span> تبدیل شدند (با تنظیم کیفیت و تغییر اندازه).</p>
+        <p>تصاویر: ۲٬۵۰۰ عکس دوربین موبایل ← <span class="ltr">WebP</span>؛ ۷۰٪ کاهش حجم کل، بدون کار دستی روی تک‌تک فایل‌ها.<br>کیفیت: بدون افت محسوس در مقایسهٔ بصری.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num"><span class="ltr">3.0 GB</span></span><span class="stat-label">قبل</span></div>
+          <div class="stat"><span class="stat-num"><span class="ltr">1.0 GB</span></span><span class="stat-label">بعد</span></div>
+          <div class="stat"><span class="stat-num">۶۶٪</span><span class="stat-label">کاهش حجم ویدئو</span></div>
+          <div class="stat"><span class="stat-num">۷۰٪</span><span class="stat-label">کاهش حجم ۲٬۵۰۰ تصویر</span></div>
+        </div>
+      </article>
+
+      <article class="project-detail">
+        <h3>تبدیل صوت به متن و انتشار چندقالبی</h3>
+        <p class="when">پروژهٔ ۲ — ۱۴۰۵</p>
+        <div class="tags">
+          <span class="tag"><span class="ltr">Gemini 3.1 Pro</span></span>
+          <span class="tag"><span class="ltr">Google AI Studio</span></span>
+          <span class="tag"><span class="ltr">Opus</span></span>
+          <span class="tag"><span class="ltr">HTML / CSS</span></span>
+          <span class="tag"><span class="ltr">VS Code Live Server</span></span>
+          <span class="tag"><span class="ltr">PDF</span></span>
+        </div>
+        <h4>مسئله</h4>
+        <p>فایل‌های صوتی حدود ۹۰ دقیقه‌ای (جلسات ضبط‌شده) باید به متن تمیز، ساختاریافته و قابل انتشار در چند قالب تبدیل می‌شد — بدون کدنویسی دستی.</p>
+        <h4>گردش کار</h4>
+        <ol class="steps">
+          <li><strong>آماده‌سازی صوت:</strong> تبدیل به فرمت <span class="ltr">Opus</span> برای حجم کم و آپلود سریع</li>
+          <li><strong>گفتار به متن:</strong> <span class="ltr">Gemini 3.1 Pro</span> در <span class="ltr">AI Studio</span> با پرامپت‌های ساختاریافته</li>
+          <li><strong>ویرایش و ساختاردهی:</strong> تیتر، پاراگراف‌بندی، علائم نگارشی، اصلاح اسامی</li>
+          <li><strong>صفحهٔ وب استایل‌دار:</strong> تولید با کمک هوش مصنوعی؛ بازبینی روی <span class="ltr">Live Server</span></li>
+          <li><strong>خروجی نهایی:</strong> صفحهٔ وب + تصویر + فایل <span class="ltr">PDF</span></li>
+        </ol>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num">۹۰</span><span class="stat-label">دقیقه صوت در هر فایل</span></div>
+          <div class="stat"><span class="stat-num">۳</span><span class="stat-label">قالب خروجی</span></div>
+          <div class="stat"><span class="stat-num">۰</span><span class="stat-label">خط کد دستی</span></div>
+        </div>
+      </article>
+
+      <h3 class="sub">همین حالا می‌توانم این کارها را برای شما انجام دهم</h3>
+      <ul class="clean">
+        <li>ورود اطلاعات در اکسل یا پنل مدیریت</li>
+        <li>بارگذاری و ویرایش محتوا در وردپرس</li>
+        <li>فشرده‌سازی تصاویر محصول برای سایت و فروشگاه‌های آنلاین</li>
+        <li>پیاده‌سازی متن جلسات، ویس‌ها و وبینارها</li>
+        <li>برچسب‌گذاری و پاک‌سازی داده برای هوش مصنوعی</li>
+        <li>فشرده‌سازی ویدئو برای آپلود و آرشیو</li>
+      </ul>
+      <p>فایل‌های قبل/بعد و نمونه‌های کامل: <a class="inline-link" href="https://drive.google.com/file/d/1Oeh6nJNYVHccj3k13JUdMPtl7Zq1Rv06/view" target="_blank" rel="noopener"><span class="ltr">Google Drive</span><span aria-hidden="true"> ↗</span></a></p>
+      <p class="muted">علی ابراهیمی‌نیا — نمونه‌کارها · به‌روزرسانی: مهر ۱۴۰۵</p>
+    </section>
+
+    <section data-robot-section data-robot-label="تماس">
+      <p class="section-index"><span class="num">۷</span><span>تماس</span></p>
+      <h2>تماس</h2>
+      <p>سریع‌ترین راه ارتباط تماس یا پیام است — معمولاً همان روز جواب می‌دهم.</p>
+      <p class="contact-line">
+        <a class="mail" href="tel:+989016630997"><span class="ltr">0901 663 0997</span></a>
+      </p>
+      <p>
+        <!-- ایمیل واقعی را جایگزین you@example.com کن (۲ جا: بخش معرفی و همین‌جا) -->
+        <a class="inline-link" href="aliebrahiminai1397@gmail.com"><span class="ltr"></span>aliebrahiminai1397@gmail.com</span></a>
+      </p>
+      <p class="muted">مشهد: وکیل‌آباد، سجاد، مسیر مترو — یا دورکار</p>
+      <p class="colophon">  <span class="ltr"></span><span class="ltr"></span></p>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ ENGINE (do not modify) ═══════════ -->
+  <script src="./robot.js" defer></script>
+
+  <!-- ═══════════ HERO + SCROLL CHOREOGRAPHY ═══════════ -->
+  <script type="module" src="./resume.js"></script>
+</body>
+</html>
